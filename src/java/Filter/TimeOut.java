@@ -66,7 +66,7 @@ public class TimeOut implements Filter {
                 chain.doFilter(request, response);
             } else {
                 req.getSession(true).setAttribute("msg", "No hay Sesión actualmente!");
-                res.sendRedirect("/index");
+                res.sendRedirect("/");
             }
         } catch (Throwable t) {
             problem = t;

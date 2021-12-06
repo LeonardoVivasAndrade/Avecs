@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Controlador.exceptions.NonexistentEntityException;
+import DAO.exceptions.NonexistentEntityException;
 import DTO.Documento;
 import java.io.Serializable;
 import javax.persistence.Query;

@@ -30,9 +30,7 @@
                 int idEstudiante = (Integer) request.getSession().getAttribute("idEstudiante");
                 Integer idPostulante = (Integer) request.getSession().getAttribute("idPostulante");
                 String observacionPostulante = (String) request.getSession().getAttribute("observacionPostulante");                
-                if (idPostulante == null) {
-                    idPostulante = 0;
-                }
+                
                 String userImg = (String) request.getSession().getAttribute("userImg");
                 Map<String, String> solicitud = (Map<String, String>) request.getSession().getAttribute("solicitud");
             %>
@@ -68,7 +66,7 @@
                                 <div class="row">
                                 </div>
                                 <%
-                                    if (estatusPostulante != null) {%>
+                                    if (estatusPostulante != "") {%>
                                 <h5>Estatus: </h5> <p><%=estatusPostulante%></p>
                                 <% }%>
                                 
@@ -112,7 +110,7 @@
                                                                     <a href="#ventana2" class="btn btn-danger" data-toggle="modal"> Cancelar postulación </a>
                                                                 </div>
                                                             </div>
-                                                            <% } else if (estatusPostulante == null) {  %>
+                                                            <% } else if (estatusPostulante == "") {  %>
                                                             <div>
                                                                 <div class="row ">
                                                                     <a href="#ventana" class="btn btn-primary" data-toggle="modal">Postular</a>

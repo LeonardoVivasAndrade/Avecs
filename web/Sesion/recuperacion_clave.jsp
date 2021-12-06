@@ -13,16 +13,19 @@
     <body>  
 
         <form class="formulario" method="post" action="../PassRecovery.do">
-
-            <h3>Recuperación de Contraseña</h3>
+            <img src="../img/ufps.png" class="card-img-top" alt="">
+            <h5>Recuperación de Contraseña</h5>
+            <hr/>
             <div class="contenedor">
                 <div class="input-contenedor">
-                    <input type="email" placeholder="Email" name="user" required>
+                    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                    <input type="email" placeholder="Email" class="form-control" name="user" required>
                     <br>
-                </div>                
-                <input id="idbtn" type="submit" value="Aceptar" class="button">
-                <br><br>
-                <a href="../index"> <input type="button" value="Cancelar" class="btn-return"> </a>               
+                </div>   
+                <div  class="text-center"> 
+                    <input id="idbtn" type="submit" value="Aceptar" class="btn btn-danger">
+                    <a href="../index"> <input type="button" value="Cancelar" class="btn btn-secondary"> </a>  
+                </div>
             </div>
         </form>
 

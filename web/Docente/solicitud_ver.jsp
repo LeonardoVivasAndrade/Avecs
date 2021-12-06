@@ -70,12 +70,6 @@
                                     <div class="form-group col-md-6">
                                         <label for="Elegir empresa">Elegir empresa</label>
                                         <select class="form-control" name="empresa" id="empresa">
-                                            <%if (solicitud == null) {%>
-                                            <option disabled selected>Seleccione</option>
-                                            <% } else {%>
-                                            <option value="<%=solicitud.get("idempresa")%>"> <%=solicitud.get("empresa")%> </ option > 
-                                                <%  }  %>
-
                                                 <%
                                                     for (Map.Entry<String, Object> entry : empresas.entrySet()) {
                                                         Map<String, String> map = (Map<String, String>) entry.getValue();

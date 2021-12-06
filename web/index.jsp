@@ -9,34 +9,42 @@
         <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="css/style-login.css">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <meta name="google-signin-client_id" content="505451920387-bjp942ig6tdgtr3pr9pi97f2cptennno.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="400000881726-m4mdhc93k07qp2u6c0n50mafq5h2knlh.apps.googleusercontent.com">
 
-        <title>Login</title>
+        <title>Login </title>
     </head>
-    <body>   
+    <body>          
 
+        <div class="container">
+            <div class="row align-items-center justify-content-center vh-100">
+                <div class="card" style="width: 23rem;">
+                    <img src="img/ufps.png" class="card-img-top" alt="">
 
-        <form class="formulario" method="post" action="SignIn.do">
+                    <form class="" method="post" action="SignIn.do">
+                        <div class="contenedor">
+                            <div class="input-contenedor">
 
-            <h1>Inicio de sesión</h1>
-            <div class="contenedor">
-                <div class="input-contenedor">
-                    <input type="email" placeholder="Email" name="user"  required>
-                    <br><br>                
-                    <input type="password" placeholder="Contraseña" name="pass" required>
+                                <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                                <input type="email" placeholder="Email" class="form-control" name="user"  required>
+
+                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                <input type="password" placeholder="Contraseña" class="form-control" name="pass" required>
+                            </div>
+
+                            <input id="idbtn" type="submit" value="Iniciar sesión" class="button">
+                            <div  class="text-center"> 
+                                <a href="Sesion/recuperacion_clave">¿Olvidaste tu clave?</a>
+                            </div>
+                            <hr/>
+                            <div id="gSignIn"></div>  
+                            <div class="g-signin2 text-center" data-onFailure="fail" data-onsuccess="onSignIn"></div>
+                        </div>
+                    </form>                 
                 </div>
-                <a href="Sesion/recuperacion_clave">Olvide contraseña</a>                
-                <br><br>
-                <input id="idbtn" type="submit" value="Iniciar sesión" class="button">
-                <br><br>
-
-                <div id="gSignIn"></div>  
-                <div class="g-signin2" data-onFailure="fail" data-onsuccess="onSignIn"></div>
             </div>
-        </form>
+        </div>          
         
         <%
-
             String msg = (String) request.getSession().getAttribute("msg");
             if (msg != null) {
         %>

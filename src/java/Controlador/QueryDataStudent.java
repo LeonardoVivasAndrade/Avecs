@@ -46,12 +46,13 @@ public class QueryDataStudent extends HttpServlet {
             EstudianteJpaController estudianteDao = new EstudianteJpaController(emf);
             PostulanteJpaController postulanteDao = new PostulanteJpaController(emf);
 
-            Estudiante estudianteDto = estudianteDao.findEstudiante(id);
+            Estudiante estudianteDto = estudianteDao.findEstudiante(id);            
             Postulante postulante = postulanteDao.findPostulante(idPostulante);
             Map<String, String> mapEstudiante = Utileria.estudianteToMap(estudianteDto);
 
             req.getSession().setAttribute("estudiante", mapEstudiante);
             req.getSession().setAttribute("obPostulante", postulante.getObservacion());
+            req.getSession().setAttribute("idPostulante", postulante.getId().toString());
             res.sendRedirect("Docente/doc_estudiante");
 
         } catch (Exception e) {

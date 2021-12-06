@@ -286,7 +286,7 @@ public class EstudianteJpaController implements Serializable {
     public Estudiante findEstudianteByPersona(int idPersona) {
         EntityManager em = getEntityManager();
         try {
-            return (Estudiante) em.createNativeQuery("SELECT * FROM Estudiante WHERE id_persona = "+idPersona, Estudiante.class).getResultList().get(0);
+            return (Estudiante) em.createNativeQuery("SELECT * FROM estudiante WHERE id_persona = "+idPersona, Estudiante.class).getResultList().get(0);
         } finally {
             em.close();
         }

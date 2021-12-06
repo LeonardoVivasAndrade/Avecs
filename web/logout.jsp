@@ -2,7 +2,7 @@
 <html>
     <head>
         <script src="https://apis.google.com/js/client:platform.js?onload=renderButtonGoogle" async defer></script>
-        <meta name="google-signin-client_id" content="505451920387-bjp942ig6tdgtr3pr9pi97f2cptennno.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="400000881726-m4mdhc93k07qp2u6c0n50mafq5h2knlh.apps.googleusercontent.com">
         <title>cerrando sesion..</title>
     </head>
     <body>

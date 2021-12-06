@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
     <!---Filtro para rutas sin sesion activa-->
+    <filter>
+        <filter-name>Login</filter-name>
+        <filter-class>Filter.Login</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Login</filter-name>     
+        <url-pattern>/index</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping>
     <filter>
         <filter-name>TimeOut</filter-name>
         <filter-class>Filter.TimeOut</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>TimeOut</filter-name>
-        <url-pattern>/Docente/*</url-pattern>
+        <filter-name>TimeOut</filter-name>     
         <url-pattern>/Administrador/*</url-pattern>
+        <url-pattern>/Docente/*</url-pattern>
         <url-pattern>/Estudiante/*</url-pattern>
-    </filter-mapping>
-    <!--- -->
-    <!---Filtro para rutas que no existan-->
-    <filter>
-        <filter-name>ValidatePages</filter-name>
-        <filter-class>Filter.ValidatePages</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>ValidatePages</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/QueryDocuments.do</url-pattern>
+        <url-pattern>/AprobacionSolicitud.do</url-pattern>
+        <url-pattern>/DeleteCompany.do</url-pattern>
+        <url-pattern>/DeleteDocument.do</url-pattern>
+        <url-pattern>/DeleteUser.do</url-pattern>
+        <url-pattern>/LoadStudents.do</url-pattern>
+        <url-pattern>/Postulante.do</url-pattern>
+        <url-pattern>/QueryCompanies.do</url-pattern>
+        <url-pattern>/QueryDataStudent.do</url-pattern>
+        <url-pattern>/QueryDocuments.do</url-pattern>
+        <url-pattern>/QueryPostulantes.do</url-pattern>
+        <url-pattern>/QueryRequest.do</url-pattern>
+        <url-pattern>/QuerySolicitudes.do</url-pattern>
+        <url-pattern>/QueryTypeDocuments.do</url-pattern>
+        <url-pattern>/QueryUsers.do</url-pattern>
+        <url-pattern>/QueryVisitas.do</url-pattern>
+        <url-pattern>/RegisterCompany.do</url-pattern>
+        <url-pattern>/RegisterRequest.do</url-pattern>
+        <url-pattern>/RegisterUser.do</url-pattern>
+        <url-pattern>/UpdateActivDoc.do</url-pattern>
+        <url-pattern>/UpdateActivUser.do</url-pattern>
+        <url-pattern>/UpdateCompany.do</url-pattern>
+        <url-pattern>/UpdatePassword.do</url-pattern>
+        <url-pattern>/UpdateProfile.do</url-pattern>
+        <url-pattern>/UpdateStatusCronograma.do</url-pattern>
+        <url-pattern>/UpdateStatusPostulant.do</url-pattern>
+        <url-pattern>/UpdateUser.do</url-pattern>
+        <url-pattern>/UploadFile.do</url-pattern>
     </filter-mapping>
     <!--- -->
     <!---Servlets-->
@@ -153,18 +181,12 @@
     </servlet>
     <!--- -->
     <!---Mappping para quitar extension .jsp-->
-    <servlet>
-        <servlet-name>error404</servlet-name>
-        <jsp-file>/Error/page404.jsp</jsp-file>
-    </servlet>
+    
     <servlet>
         <servlet-name>LoadStudents</servlet-name>
         <servlet-class>Controlador.LoadStudents</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>error404</servlet-name>
-        <url-pattern>/Error/page404</url-pattern>
-    </servlet-mapping>
+    
     <servlet>
         <servlet-name>logoutG</servlet-name>
         <jsp-file>/logout.jsp</jsp-file>
@@ -574,6 +596,16 @@
         <servlet-name>LoadStudents</servlet-name>
         <url-pattern>/LoadStudents.do</url-pattern>
     </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Error/page404.jsp</location>
+    </error-page>
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
     <session-config>
         <session-timeout>
             60

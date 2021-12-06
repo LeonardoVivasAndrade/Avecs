@@ -2,7 +2,7 @@
 <%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,8 +40,8 @@
                         <div>
                             <h5><%=user.get("nombres") + ""%></h5>
                         </div>
-                        <div class="img-profile">
-                            <img src="<%=userImg%>">                        
+                        <div> <!-- class="img-profile" >  --> 
+                            <img id="fotor" style="border-radius: 50%;" src="<%=userImg%>">                        
                         </div>
                     </div>
                 </nav>

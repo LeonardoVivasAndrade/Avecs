@@ -67,8 +67,8 @@ span {
 #sidebar {
     min-width: 200px;
     max-width: 200px;
-    background: #003875;
-    color: #fff;
+    background: #fff;
+    color: #000;
     transition: all 0.3s;
 }
 
@@ -96,7 +96,7 @@ span {
     padding: 20px 10px;
     text-align: center;
     font-size: 0.85em;
-    color: #fff;
+    color: #000;
 }
 
 #sidebar.active ul li a i {
@@ -121,7 +121,7 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #003875;
+    background: #dd4b39;
 }
 
 #sidebar .sidebar-header strong {
@@ -164,32 +164,32 @@ a[data-toggle="collapse"] {
 ----------------------------------------------------- */
 
 .img-profile img {
-    height: 60px;
-    width: 60px;
+    width: 60px ;
+    height: 60px ;      
 }
 .btn-info:hover {
     color: white;
-    background-color: #2e68a2;
+    background-color: #9c2c1e;
     border-color: #f8f9fa;
 }
 
 .btn-info:focus {
     color: #fff;
-    background-color: #003875;
+    background-color: #dd4b39;
     border-color: #f8f9fa;
     box-shadow: none;   
 
 }
 
 .btn-info:active {
-    background-color: #003875;
+    background-color: #dd4b39 !important;
     border-color: #f8f9fa;
     box-shadow: #ffffff;    
 }
 
 .btn-info {
     color: #fff;
-    background-color: #003875;
+    background-color: #dd4b39;
     border-color: #f8f9fa;
 }
 
@@ -236,12 +236,12 @@ a.article:hover {
 }
 
 .btn-primary{
-    background: #003875;
+    background: #dd4b39;
     border-color: white;
 }
 
 .btn-primary:hover{
-    background: #2e68a2;
+    background: #9c2c1e;
     border-color: white;
 }
 

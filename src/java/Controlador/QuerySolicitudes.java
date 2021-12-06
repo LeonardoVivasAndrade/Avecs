@@ -64,7 +64,11 @@ public class QuerySolicitudes extends HttpServlet {
                         req.getSession().setAttribute("estatusPostulante", postulante.getEstatus().getDescripcion());
                         req.getSession().setAttribute("idPostulante", postulante.getId());
                         req.getSession().setAttribute("observacionPostulante", postulante.getObservacion());
-                    } catch (Exception ex) {}
+                    } catch (Exception ex) {
+                        req.getSession().setAttribute("estatusPostulante", "");
+                        req.getSession().setAttribute("idPostulante", 0);
+                        req.getSession().setAttribute("observacionPostulante", "");
+                    }
 
                     //obtiene el cronograma de la solicitud.
                     List<Cronograma> listcronograma = solicitud.getCronogramaList();
@@ -78,8 +82,9 @@ public class QuerySolicitudes extends HttpServlet {
                 String ventana = req.getParameter("idventana");
                 req.getSession().setAttribute("idventana", ventana);
                 res.sendRedirect(user.get("TipoUsuario") + "/solicitud_ver?idSolicitud=" + idSolicitud);
+                
 
-                //Obtiene list de solicitudes
+            //Obtiene list de solicitudes
             } else {
                 List<Solicitud> listSolicitud = new ArrayList<>();
                 Map<String, Object> mapSolicitudes = new HashMap<>();

@@ -257,7 +257,7 @@ public class AsignaturaJpaController implements Serializable {
     public Asignatura findAsignaturaByCodigo(String codigoAsignatura) {
         EntityManager em = getEntityManager();
         try {
-            return (Asignatura) em.createNativeQuery("SELECT * FROM Asignatura WHERE codigo_asignatura = "+codigoAsignatura, Asignatura.class).getResultList().get(0);
+            return (Asignatura) em.createNativeQuery("SELECT * FROM asignatura WHERE codigo_asignatura = "+codigoAsignatura, Asignatura.class).getResultList().get(0);
         } finally {
             em.close();
         }

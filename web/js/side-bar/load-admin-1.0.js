@@ -1,6 +1,6 @@
 var sidebar =   '<div class="sidebar-header">'+
-                    '<h3>AVECS</h3>'+
-                    '<strong>CS</strong>'+
+                    '<h3 style="color: #fff !important">AVECS</h3>'+
+                    '<strong style="color: #fff !important">CS</strong>'+
                 '</div>'+
 
                 '<ul class="list-unstyled components">'+

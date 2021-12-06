@@ -27,6 +27,7 @@
                 String userImg = (String) request.getSession().getAttribute("userImg");
                 Map<String, Object> estudiante = (Map<String, Object>) request.getSession().getAttribute("estudiante");
                 String obPostulante = (String) request.getSession().getAttribute("obPostulante");
+                String idPostulante = (String) request.getSession().getAttribute("idPostulante");
             %>
 
             <!-- Page Content  -->
@@ -47,9 +48,14 @@
                         </div>
                     </div>
                 </nav>
-
+                <div> 
+                    <button type="button" onclick="window.location.href = '../QueryPostulantes.do'" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Regresar</span>
+                    </button>
+                </div>
                 <!-- Content  -->
-                <div style="justify-content:center;" class="form-row">
+                <div style="justify-content:center;" class="form-row">                    
                     <div class="form-group col-md-12">
                         <div class="card my-4">
                             <h4 class="card-header">Información del estudiante</h4>
@@ -129,7 +135,7 @@
         <!-- jQuery Side-bar -->    
         <script>
         if (window.performance.navigation.type === 1) {
-            location.href = "../QueryDataStudent.do?idestudiante=<%=estudiante.get("idEstudiante")%>";
+            location.href = "../QueryDataStudent.do?idestudiante=<%=estudiante.get("idEstudiante")%>&idPostulante=<%=idPostulante%>";
         }
         </script>
 
